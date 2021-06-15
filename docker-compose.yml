@@ -24,7 +24,7 @@ services:
         loki-external-labels: job=dockerlogs,owner=ruan,environment=development
 
   grafana:
-    image: grafana/grafana:7.2.2
+    image: grafana/grafana:7.5.8
     container_name: grafana
     volumes:
     - ./config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
@@ -32,7 +32,7 @@ services:
     - "3000:3000"
 
   loki:
-   image: grafana/loki:2.0.0
+   image: grafana/loki:2.2.1
    container_name: loki
    volumes:
      - ./config/loki.yaml:/etc/config/loki.yaml
